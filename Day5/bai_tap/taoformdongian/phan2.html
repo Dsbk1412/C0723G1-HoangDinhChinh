@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table {
+        width: 35%;
+    }
+
+    #address {
+        position: relative;
+        top: -13px;
+    }
+    .textblue{
+        color: blue;
+    }
+</style>
+<body>
+<form action="#" method="get">
+    <table border="0" cellpadding="1" cellspacing="0" style="background-color: yellow">
+        <caption style="background-color: #3FFBDC ; color: blue"><p align="left">ĐĂNG KÝ HỌC VIÊN</p></caption>
+        <tr>
+            <label for="yourname"><td style="padding-right: 0px" class="textblue" size="20">Họ và tên</td>
+                <td><input type="text" name="name" id="yourname" style="width: 200px"></label></td>
+        </tr>
+        <tr>
+            <td class="textblue">Ngày sinh</td>
+            <td><input type="date" name="dob" style="width: 115px"></td>
+        </tr>
+        <tr>
+            <td class="textblue">Giới tính</td>
+            <td>
+                <input type="radio" name="gender" checked>Nam
+                <input type="radio" name="gender">Nữ
+            </td>
+        </tr>
+        <tr>
+            <td id="address" class="textblue">Địa chỉ</td>
+            <td><textarea style="height: 40px;"></textarea>
+        </tr>
+        <tr>
+            <td class="textblue">Lớp</td>
+            <td><select name="class">
+                <option disabled="disabled">Chọn Khoá học & Lớp Học</option>
+                <optgroup label="Lớp DE">
+                    <option>Lớp DE160</option>
+                    <option>Lớp DE150</option>
+                    <option>Lớp DE140</option>
+                </optgroup>
+                <optgroup label="Lớp DS">
+                    <option>Lớp DS160</option>
+                    <option>Lớp DS150</option>
+                    <option>Lớp DS140</option>
+                </optgroup>
+            </select></td>
+        </tr>
+        <tr>
+            <td class="textblue">Email</td>
+            <td><input type="text" style="width: 140px"></td>
+        </tr>
+        <tr>
+            <td class="textblue">Điện thoại</td>
+            <td><input type="text" style="width: 140px"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" name="Đăng ký">
+                <input type="reset" name="Nhập lại">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
