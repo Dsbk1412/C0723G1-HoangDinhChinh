@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<h1>Tính lãi ngân hàng</h1>
+<div>
+    <label>Số tiền ban đầu:</label>
+    <label for="soTienBanDau"></label><input type="number" id="soTienBanDau">
+</div>
+<div>
+    <label>Số tháng cho vay:</label>
+    <label for="soThangChoVay"></label><input type="number" id="soThangChoVay">
+</div>
+<div>
+    <label>Lãi xuất hàng tháng (%):</label>
+    <label for="laiXuatHangThang"></label><input type="number" id="laiXuatHangThang">
+</div>
+<button onclick="tinhLaiNganHang()">Tính</button>
+<div id="ketQua"></div>
+<script>
+    function tinhLaiNganHang() {
+        // Lấy thông tin từ các ô input
+        let soTienBanDau = parseFloat(document.getElementById("soTienBanDau").value);
+        let soThangChoVay = parseInt(document.getElementById("soThangChoVay").value);
+        let laiXuatHangThang = parseFloat(document.getElementById("laiXuatHangThang").value);
+
+        // Tính lãi ngân hàng
+        let laiNganHang = soTienBanDau * Math.pow((1 + laiXuatHangThang / 100), soThangChoVay) - soTienBanDau;
+
+        // Hiển thị kết quả
+        document.getElementById("ketQua").innerHTML = "Lãi nếu không rút tiền: " + laiNganHang.toLocaleString() + " đ";
+    }
+</script>
+</body>
+</html>

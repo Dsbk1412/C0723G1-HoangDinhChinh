@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<h1>Tính thuế thu nhập cá nhân</h1>
+<div>
+    <label>Thu nhập:</label>
+    <label for="thuNhap"></label><input type="number" id="thuNhap">
+</div>
+<button onclick="tinhThue()">Tính</button>
+<div id="ketQua"></div>
+<script>
+    function tinhThue() {
+        // Lấy thông tin từ các ô input
+        let thuNhap = parseFloat(document.getElementById("thuNhap").value);
+
+        // Tính thuế thu nhập cá nhân
+        let thue;
+        if (thuNhap <= 5000000) {
+            thue = thuNhap * 5 / 100; // Thuế 5% cho thu nhập dưới 5 triệu
+        } else if (thuNhap > 5000000 && thuNhap <= 10000000) {
+            thue = (5000000 * 5 / 100) + (thuNhap - 5000000) * 10 / 100; // Thuế 5% cho 5 triệu đầu + 10% cho phần thu nhập từ 5 triệu đến 10 triệu
+        } else {
+            thue = (5000000 * 5 / 100) + (5000000 * 10 / 100) + (thuNhap - 10000000) * 15 / 100; // Thuế 5% cho 5 triệu đầu + 10% cho phần 5 triệu tiếp theo + 15% cho phần thu nhập trên 10 triệu
+        }
+
+        // Hiển thị kết quả
+        document.getElementById("ketQua").innerHTML = "Thuế thu nhập cá nhân: " + thue.toLocaleString() + " đ";
+    }
+</script>
+</body>
+</html>

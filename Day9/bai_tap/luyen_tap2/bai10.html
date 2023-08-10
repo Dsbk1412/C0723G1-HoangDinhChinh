@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<h1>Tính giá điện</h1>
+<div>
+    <label>Số điện đầu:</label>
+    <label for="soDienDau"></label><input type="number" id="soDienDau">
+</div>
+<div>
+    <label>Số điện cuối:</label>
+    <label for="soDienCuoi"></label><input type="number" id="soDienCuoi">
+</div>
+<button onclick="tinhGiaDien()">Tính</button>
+<div id="ketQua"></div>
+<script>
+    function tinhGiaDien() {
+        // Lấy thông tin từ các ô input
+        let soDienDau = parseFloat(document.getElementById("soDienDau").value);
+        let soDienCuoi = parseFloat(document.getElementById("soDienCuoi").value);
+
+        // Tính số điện đã sử dụng
+        let soDienSuDung = soDienCuoi - soDienDau;
+
+        // Tính giá điện
+        let giaDien;
+        if (soDienSuDung <= 50) {
+            giaDien = soDienSuDung * 1500; // Giá điện dưới 50 kWh là 1500đ/kWh
+        } else if (soDienSuDung > 50 && soDienSuDung <= 100) {
+            giaDien = (50 * 1500) + (soDienSuDung - 50) * 2000; // Giá điện từ 51-100 kWh là 2000đ/kWh
+        } else {
+            giaDien = (50 * 1500) + (50 * 2000) + (soDienSuDung - 100) * 3000; // Giá điện từ 101 kWh trở đi là 3000đ/kWh
+        }
+
+        // Hiển thị kết quả
+        document.getElementById("ketQua").innerHTML = "Số điện sử dụng: " + soDienSuDung + " kWh<br/>Tổng tiền điện: " + giaDien.toLocaleString() + " đ";
+    }
+</script>
+</body>
+</html>
