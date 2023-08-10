@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    let soPhutGoiDien = +prompt("Nhập Số Phút Gọi Điện Trong tháng này: ")
+    let tiencuoc = 1;
+    if(soPhutGoiDien < 10){
+        tiencuoc = tiencuoc * soPhutGoiDien * 4000;
+
+    }else if(soPhutGoiDien <20){
+        tiencuoc = tiencuoc * soPhutGoiDien * 3000;
+
+    }else{
+        tiencuoc = tiencuoc * soPhutGoiDien * 2000;
+    }
+    alert("Cuoc phi khi goi dien" +soPhutGoiDien + " la: " +tiencuoc);
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    while(isNaN(diemkiemtra) && isNaN(diemgiuaky) && isNaN(diemcuoiky)){
+        var diemkiemtra = +prompt("Nhập điểm kiểm tra");
+        var diemgiuaky = +prompt("Nhập điểm thi giữa kỳ");
+        var diemcuoiky = +prompt("Nhập điểm thi cuối kỳ")
+    }
+    let Avr = (diemkiemtra + diemgiuaky + diemcuoiky) / 3;
+    if(Avr >= 8.0){
+        alert("Học sinh GIỎI");
+    }else if(Avr>= 6.5){
+        alert("Học sinh KHÁ");
+    }else if(Avr >= 5.0){
+        alert("Học sinh TRUNG BÌNH");
+    }else{
+        alert("Học sinh YẾU");
+    }
+</script>
+</body>
+</html>

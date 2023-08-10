@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<form id="checkForm">
+    <label for="numberA">Số a: </label>
+    <input type="number" id="numberA" required>
+    <br>
+    <label for="numberB">Số b: </label>
+    <input type="number" id="numberB" required>
+    <br>
+    <button type="submit">Kiểm tra</button>
+</form>
+<p id="result"></p>
+
+<script>
+    const form = document.getElementById("checkForm");
+    const result = document.getElementById("result");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const numberA = parseInt(document.getElementById("numberA").value);
+        const numberB = parseInt(document.getElementById("numberB").value);
+
+        if (numberA % numberB === 0) {
+            result.textContent = `Số ${numberA} chia hết cho ${numberB}.`;
+        } else {
+            result.textContent = `Số ${numberA} không chia hết cho ${numberB}.`;
+        }
+    });
+</script>
+</body>
+</html>

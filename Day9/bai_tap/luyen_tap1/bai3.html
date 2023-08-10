@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SOS</title>
+</head>
+<body>
+<h1>Kiem tra so nguyen</h1>
+
+<script>
+    function kiemTraSoNguyen() {
+        var soNguyen = parseInt(document.getElementById("soNguyen").value);
+        var ketQua = document.getElementById("ketQua");
+
+        if (soNguyen < 0) {
+            document.getElementById('soNguyen').innerHTML = "So " + soNguyen + " La so nho hon 0.";
+        } else {
+            ketQua.innerHTML = "So " + soNguyen + " La so lon hon hoac bang 0.";
+        }
+    }
+</script>
+
+<label for="soNguyen">Nhap so nguyen:</label>
+<input type="number" id="soNguyen">
+<button onclick="kiemTraSoNguyen()">Check</button>
+
+<p id="ketQua"></p>
+</body>
+</html>

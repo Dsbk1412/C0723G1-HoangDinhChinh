@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SOS</title>
+</head>
+<body>
+<h1>Kiem tra tuoi hoc sinh</h1>
+
+<script>
+    function kiemTraTuoi() {
+        var tuoi = parseInt(document.getElementById("tuoi").value);
+        var ketQua = document.getElementById("ketQua");
+
+        if (tuoi < 15) {
+            ketQua.innerHTML = "Tuoi hoc sinh khong du dieu kien vao lop 10.";
+        } else {
+            ketQua.innerHTML = "Tuoi hoc sinh du dieu kien de vao lop 10.";
+        }
+    }
+</script>
+
+<label for="tuoi">Nhap tuoi hoc sinh:</label>
+<input type="number" id="tuoi">
+<button onclick="kiemTraTuoi()">Check</button>
+
+<p id="ketQua"></p>
+</body>
+</html>
