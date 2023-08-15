@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<button onclick="handleClick()">Click here!</button>
+<script>
+    function handleClick() {
+        let n = +prompt("Bạn muốn đoán trong khoảng nào");
+        let rdnumber = Math.floor(Math.random() * n);
+        // alert(rdnumber);
+        let count = 0;
+        do {
+            let number = +prompt("Nhập số bạn muốn đoán:")
+            if ( number === rdnumber) {
+                alert("Good job!");
+                break;
+            } else if (number > rdnumber) {
+                alert("Lớn hơn rồi đoán lại đi");
+            } else {
+                alert("Đoán số bé thế này làm sao mà trúng :))");
+            }
+            count = count +1;
+            if (count >= 3 ){
+                alert("Game over")
+                break;
+            }
+        } while (true)
+    }
+</script>
+</body>
+</html>

@@ -7,25 +7,19 @@
 <body>
 <h1>Dãy Fibonacci</h1>
 <ul id="fibonacci-list"></ul>
-
 <script>
     // Function to calculate Fibonacci sequence
     function fibonacci(n) {
         let sequence = [0, 1];
-
         for (let i = 2; i < n; i++) {
             sequence.push(sequence[i - 1] + sequence[i - 2]);
         }
-
         return sequence;
     }
-
     // Get the Fibonacci sequence up to 20 numbers
     let fibonacciSequence = fibonacci(20);
-
     // Display the Fibonacci sequence in the HTML page
     let fibonacciList = document.getElementById("fibonacci-list");
-
     for (let i = 0; i < fibonacciSequence.length; i++) {
         let listItem = document.createElement("li");
         listItem.textContent = fibonacciSequence[i];
