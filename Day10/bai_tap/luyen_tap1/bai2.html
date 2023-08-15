@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    do{
+        let nhietDo = prompt("Nhập nhiệt độ hiện tại:");
+
+        nhietDo = parseInt(nhietDo);
+
+        if (nhietDo > 100) {
+            alert("Nhiệt độ hiện tại cao quá. Vui lòng giảm nhiệt độ.");
+            break;
+        } else if (nhietDo < 20) {
+            alert("Nhiệt độ hiện tại thấp quá. Vui lòng tăng nhiệt độ.");
+            break;
+        } else {
+            alert("Nhiệt độ hiện tại trong khoảng bình thường.");
+        }
+    } while (true)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    document.write("<div style='width: 100%; text-align: center;'>");
+    document.write("<h1 style='color: #038bff'>Bảng cửu chương</h1>");
+    for (let i=1; i<=9; i++){
+        document.write("<div style='width: 9%; float: left; padding: 5px; margin: 8px; border: 1px solid red; border-radius: 10px; background-color: yellow'>");
+        document.write("<h3 style='border: 2px dotted black; border-radius: 20px; padding: 0; margin: 10px; background-color: tomato'>", i ,"</h3>");
+        for (j=1; j<=10; j++){
+            document.writeln(i, "x", j, "=", i * j, "<br>");
+            }
+        document.write("</div>");
+    }
+    document.write("</div>");
+</script>
+</body>
+</html>

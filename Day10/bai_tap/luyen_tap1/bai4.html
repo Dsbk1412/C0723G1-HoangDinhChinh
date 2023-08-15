@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<p id="result"></p>
+
+<script>
+    function timsochiahetcho5() {
+        let n1 = 0;
+        let n2 = 1;
+        let n3 = 0;
+
+        while (true) {
+            n3 = n1 + n2;
+            if (n3 % 5 === 0) {
+                document.getElementById("result").innerHTML = "Số đầu tiên trong dãy Fibonacci chia hết cho 5 là " + n3;
+                break;
+            }
+            n1 = n2;
+            n2 = n3;
+        }
+    }
+
+    timsochiahetcho5();
+</script>
+</body>
+</html>

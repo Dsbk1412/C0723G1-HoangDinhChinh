@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập số lượng dãy:");
+    let a = 0;
+    let b = 1
+    let f = 0;
+    for (let i = 0; i < n; i++ ) {
+        f = a + b;
+        document.write(a + "<br>")
+        a = b;
+        b = f;
+    }
+</script>
+</body>
+</html>

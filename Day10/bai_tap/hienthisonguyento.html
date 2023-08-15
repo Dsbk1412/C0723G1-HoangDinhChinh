@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SOS</title>
+</head>
+<body>
+<script>
+  let a = 0;
+  let b = 0;
+  do {
+    let dem = 0;
+    for (let i = 1 ; i <= a; i++) {
+      if (a % i === 0) {
+        dem++;
+      }
+    }
+    if (dem === 2 ) {
+      document.write(a + "</br>")
+      b++;
+    }
+    a++
+  } while (b < 20);
+</script>

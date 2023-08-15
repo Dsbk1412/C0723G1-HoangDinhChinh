@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<h1>Tính tổng của 20 số đầu tiên trong dãy Fibonacci</h1>
+
+<div id="result"></div>
+
+<script>
+    // Hàm tính tổng của 20 số đầu tiên trong dãy Fibonacci
+    function tongcacsotrongday() {
+        let sum = 0;
+        let fib1 = 0;
+        let fib2 = 1;
+
+        for (let i = 1; i <= 20; i++) {
+            let currentFibonacci = fib1 + fib2;
+            sum += currentFibonacci;
+
+            fib1 = fib2;
+            fib2 = currentFibonacci;
+        }
+
+        return sum;
+    }
+
+    // Gọi hàm tính tổng và hiển thị kết quả trong phần tử có id là "result"
+    let resultElement = document.getElementById("result");
+    resultElement.innerHTML = "Tổng của 20 số đầu tiên trong dãy Fibonacci là: " + tongcacsotrongday();
+</script>
+</body>
+</html>
