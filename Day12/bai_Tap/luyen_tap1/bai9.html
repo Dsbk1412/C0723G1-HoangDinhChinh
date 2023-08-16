@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    let a = [3, 1, 9, 4, 5, 6, 8, 7, 2, 10];
+    let b = [6, 8, 5, 2, 3, 1, 4, 9, 7, 10];
+    let c = [];
+    // Nối mảng b và a thành mảng c
+    for (let i = 0; i < a.length; i++) {
+        // c.push(a[i]);
+        c[i] = a[i];
+    }
+    for (let i = 0; i < b.length; i++) {
+        // c.push(b[i]);
+        c[a.length + i] = b[i];
+    }
+    document.write("Mảng c: [" + c + "]");
+</script>
+</body>
+</html>
+

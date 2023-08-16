@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SOS</title>
+</head>
+<body>
+<h1>Đếm số nguyên</h1>
+<p>Có <span id="result"></span> số nguyên lớn hơn hoặc bằng 10 trong mảng.</p>
+<script>
+    window.onload = function() {
+        let arr = [2, 20, 10, 12, 3, 11, 15, 6, 13, 4];
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] >= 10) {
+                count++;
+            }
+        }
+        document.getElementById("result").innerHTML = count;
+    };
+</script>
+</body>
+</html>

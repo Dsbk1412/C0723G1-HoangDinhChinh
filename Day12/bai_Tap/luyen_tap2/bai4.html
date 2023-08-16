@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    let str = 'Cuộc đời ai cũng có bão giông, kẻ có chỗ trú người thì không';
+    let wordCount = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === ' ' && str[i-1] !== ' ') {
+            wordCount++;
+        }
+    }
+    wordCount++;
+    document.write(`Chuỗi chứa ${wordCount} từ.`);
+</script>
+</body>
+</html>

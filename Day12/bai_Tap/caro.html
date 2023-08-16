@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SOS</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #ef1111;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td onclick="clickCell(this)">X</td>
+        <td onclick="clickCell(this)">O</td>
+        <td onclick="clickCell(this)">X</td>
+    </tr>
+    <tr>
+        <td onclick="clickCell(this)">O</td>
+        <td onclick="clickCell(this)">X</td>
+        <td onclick="clickCell(this)">O</td>
+    </tr>
+    <tr>
+        <td onclick="clickCell(this)">X</td>
+        <td onclick="clickCell(this)">O</td>
+        <td onclick="clickCell(this)">X</td>
+    </tr>
+</table>
+<script>
+    function clickCell(cell) {
+        if (cell.innerHTML !== "") {
+            alert("This cell is already taken");
+            return;
+        }
+        cell.classList.add("X");
+        cell.innerHTML = "X";
+        // TODO: check for winning condition and switch to O's turn
+    }
+</script>
+</body>
+</html>

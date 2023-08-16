@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    //khởi tạo mảng số nguyên gồm 10 phần tử khác nhau
+    let arr = [2, 7, 3, 1, 5, 9, 4, 8, 0, 6];
+    //tìm phần tử có giá trị lớn nhất trong mảng
+    let max = arr[0];
+    let index = 0;
+    for (let i = 1; i < 10; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+            index = i;
+        }
+    }
+    //hiển thị ra phần tử có giá trị lớn nhất và vị trí của phần tử đó
+    document.write("Phần tử có giá trị lớn nhất trong mảng là " + max + " và nằm ở vị trí thứ " + index);
+</script>
+</body>
+</html>

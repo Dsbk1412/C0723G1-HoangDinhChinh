@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+    <!-- Thêm CSS để trang trí cho form và button -->
+    <style>
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form>
+        <label for="string">Nhập từ tiếng Anh cần dịch:</label>
+        <input type="text" name="" id="string">
+        <button type="button" onclick="transcript()">Dịch</button>
+    </form>
+    <p id="result"></p>
+</div>
+<script>
+    function transcript(){
+        let eng = ["banana","apple","orange","mango","potato","water melon","lemon","book","pen","car","run","sleep","wake up","hello"];
+        let vie = ["chuối","táo","cam","xoài","khoai tây","dưa hấu","chanh","sách","bút","xe hơi","chạy","ngủ","thức dậy","xin chào"];
+        let string = document.getElementById("string").value.toLowerCase(); // Chuyển từ nhập vào thành chữ thường để xử lý
+        let indexeng = 0;
+        let result="";
+        for (let i = 0; i < eng.length;i++){
+            if (string === eng[i]) {
+                indexeng = i;
+                for (let j = 0; j < vie.length; j++) {
+                    if (indexeng === j) {
+                        result = vie[j];
+                    }
+                }
+            }
+        }
+        if (result === "") {
+            document.getElementById("result").innerHTML = "Không tìm thấy kết quả";
+        } else {
+            document.getElementById("result").innerHTML = "Từ \"" + string + "\" dịch sang tiếng Việt là \"" + result + "\"";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    //khởi tạo/nhập vào một mảng
+    let arr =  [ 'c', 's', 'c', '2', '6', '1' ];
+    document.write("Mảng ban đầu: [" + arr + "]");
+    //đảo ngược các phần tử trong mảng
+    // arr.reverse();
+    for (let i = 0, j = arr.length - 1; i < j; i++, j--) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    //hiển thị mảng sau khi đã đảo ngược các phần tử
+    document.write("<br>");
+    document.write("Mảng sau khi đảo ngược: [" + arr + "]");
+</script>
+</body>
+</html>

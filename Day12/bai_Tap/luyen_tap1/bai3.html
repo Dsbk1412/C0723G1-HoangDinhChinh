@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    //khởi tạo mảng số nguyên
+    let arr = [3, 7, 1, 9, 2, 8, 4, 6, 5];
+    //tìm giá trị lớn nhất trong mảng
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    //hiển thị giá trị lớn nhất trong mảng
+    document.write("Giá trị lớn nhất trong mảng là " + max);
+    //tính giá trị trung bình của các phần tử trong mảng
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    let avr = sum / arr.length;
+    //hiển thị giá trị trung bình của các phần tử trong mảng
+    document.write("<br>");
+    document.write("Giá trị trung bình của các phần tử trong mảng là " + avr);
+</script>
+</body>
+</html>

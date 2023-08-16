@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<label for="input">Nhập vào một chuỗi:</label>
+<input type="text" id="input">
+<button onclick="toggleCase()">Chuyển đổi ký tự chữ thường và chữ hoa</button>
+<p id="output"></p>
+
+<script>
+    function toggleCase() {
+        let input = document.getElementById("input").value;
+        let output = "";
+        for (let i = 0; i < input.length; i++) {
+            let char = input.charAt(i);
+            if (char === char.toUpperCase()) {
+                output += char.toLowerCase();
+            } else {
+                output += char.toUpperCase();
+            }
+        }
+        document.getElementById("output").textContent = output;
+    }
+</script>
+</body>
+</html>
