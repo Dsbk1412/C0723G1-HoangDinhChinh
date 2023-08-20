@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    let num1 = +prompt("Nhập vào num1:");
+    let num2 = +prompt("Nhập vào num2:");
+    let num3 = +prompt("Nhập vào num3:");
+    alert("Số nhỏ nhất là: " + findMinNumber(num1, num2, num3));
+    function findMinNumber(a, b, c) {
+        let min = a;
+        if(b < min) {
+            min = b;
+        }
+        if(c < min) {
+            min = c;
+        }
+        return min;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    let number = +prompt("Nhap vao so can kiem tra");
+    if (isPrime(number)) {
+        alert(number + " la so nguyen to");
+    } else {
+        alert(number + " khong la so nguyen to");
+    }
+    function isPrime(number) {
+        if (number <= 1) {
+            return false; // số nhỏ hơn hoặc bằng 1 không phải số nguyên tố
+        }
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) { // nếu tìm thấy ước số thì không phải là số nguyên tố
+                return false;
+            }
+        }
+        return true; // nếu không tìm thấy ước số thì là số nguyên tố
+    }
+</script>
+</body>
+</html>

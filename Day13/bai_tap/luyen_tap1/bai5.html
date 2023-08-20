@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<button onclick="searchStar()">Search Star</button>
+<script>
+    let stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let constellations = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function findConstellation(starName) {
+        for(let i = 0; i < stars.length; i++) {
+            if(stars[i] === starName) {
+                return constellations[i];
+            }
+        }
+        return "Star not found";
+    }
+
+    function searchStar() {
+        let starName = prompt("Enter the name of a star:");
+        let constellation = findConstellation(starName);
+        alert(constellation);
+    }
+</script>
+</body>
+</html>

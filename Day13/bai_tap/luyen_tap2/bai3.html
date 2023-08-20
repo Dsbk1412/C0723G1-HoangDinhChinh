@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SOS</title>
+</head>
+<body>
+<script>
+  let num = +prompt("Nhập vào số bất kỳ:");
+  alert("Giai thừa của " + num + " là: " + factorial(num));
+  function factorial(number) {
+    if(number === 0 || number === 1) {
+      return 1;
+    } else {
+      return number * factorial(number - 1);
+    }
+  }
+</script>
+</body>
+</html>

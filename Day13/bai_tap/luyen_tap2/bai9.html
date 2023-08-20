@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    function kiemtrakytutrongmang(arr, c) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === c) {
+                count++;
+            }
+        }
+        if (count > 0) {
+            return count;
+        } else {
+            return -1;
+        }
+    }
+    let charArr = ['a', 'b', 'c', 'd', 'e', '1', '2', '3', '4', '5'];
+    let char = prompt("Nhập vào ký tự bất kỳ:");
+    let charCount = kiemtrakytutrongmang(charArr, char);
+    if (charCount === -1) {
+        alert("-1");
+    } else {
+        alert("Ký tự " + char + " xuất hiện " + charCount + " lần trong mảng.");
+    }
+</script>
+</body>
+</html>

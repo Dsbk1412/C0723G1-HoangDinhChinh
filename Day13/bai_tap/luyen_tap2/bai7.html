@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    let num1 = +prompt("Nhập vào số bất kỳ:");
+    let num2 = +prompt("Nhập vào số bất kỳ:");
+    let swappedNums = swapIntegers(num1, num2);
+    alert("The swapped numbers are " + swappedNums[0] + " and " + swappedNums[1]);
+    function swapIntegers(a, b) {
+        let temp = a;
+        a = b;
+        b = temp;
+        return [a, b];
+    }
+</script>
+</body>
+</html>

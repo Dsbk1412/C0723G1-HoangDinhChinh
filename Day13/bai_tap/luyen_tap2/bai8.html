@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    function reverseArray(arr) {
+        let arr2  = [];
+        let j = 0;
+        for(let i = arr.length - 1 ; i >= 0 ;i--){
+            arr2[j] = arr[i];
+            j++;
+        }
+        return arr2;
+    }
+    let numArr = [1, 2, 3, 4, 5];
+    let reversedNumArr = reverseArray(numArr);
+    alert("Mảng sau khi đảo ngược là: " + reversedNumArr);
+</script>
+</body>
+</html>

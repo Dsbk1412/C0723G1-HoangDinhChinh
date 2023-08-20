@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    function feetToMeter(feet) {
+        return  0.305 * feet;
+
+    }
+    function meterToFeet(meter) {
+        return  3.279 * meter;
+
+    }
+    feet = +prompt("Nhập số feet cần chuyển đổi sang mét:");
+    meter = feetToMeter(feet);
+    alert(feet + " feet = " + meter + " mét");
+    meter = +prompt("Nhập số mét cần chuyển đổi sang feet:");
+    feet = meterToFeet(meter);
+    alert(meter + " mét = " + feet + " feet");
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    let inputChar = prompt("Nhập vào ký tự bất kỳ:");
+    if(isNumber(inputChar)) {
+        alert(inputChar + " Là ký tự số");
+    } else {
+        alert(inputChar + " Không phải ký tự số");
+    }
+    function isNumber(char) {
+        return !isNaN(char) && char !== ' ';
+    }
+</script>
+</body>
+</html>
