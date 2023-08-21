@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<canvas id="rectangle-canvas" width="400" height="300"></canvas>
+<div id="result">
+    <h3>Diện tích: <span id="area"></span></h3>
+    <h3>Chu vi: <span id="perimeter"></span></h3>
+</div>
+
+<script src="bai1.js"></script>
+<script>
+    let rectangle = new Rectangle(100, 50);
+    rectangle.draw(document.getElementById("rectangle-canvas").getContext("2d"));
+
+    rectangle.setWidth(60);
+    rectangle.setHeight(80);
+
+    document.getElementById("area").innerText = rectangle.getArea();
+    document.getElementById("perimeter").innerText = rectangle.getPerimeter();
+</script>
+</body>
+</html>

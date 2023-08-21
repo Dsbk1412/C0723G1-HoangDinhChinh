@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SOS</title>
+</head>
+<body>
+<script>
+  class Mobile {
+    constructor() {
+      this.battery = 100;
+      this.isOn = false;
+      this.draft = '';
+      this.inbox = [];
+      this.sent = [];
+    }
+
+    checkStatus() {
+      return this.isOn;
+    }
+
+    turnOn() {
+      if (!this.isOn) {
+        this.isOn = true;
+        this.battery--;
+      }
+    }
+
+    turnOff() {
+      if (this.isOn) {
+        this.isOn = false;
+        this.battery--;
+      }
+    }
+
+    chargeBattery() {
+      if (!this.isOn) {
+        this.battery = 100;
+      }
+    }
+
+    saveDraft(msg) {
+      if (this.isOn) {
+        this.battery--;
+        this.draft = msg;
+      }
+    }
+
+    receiveMsg(msg) {
+      if (this.isOn) {
+        this.battery--;
+        this.inbox.push(msg);
+      }
+    }
+
+    sendMsg(msg, mobile) {
+      if (this.isOn && mobile.checkStatus()) {
+        this.battery--;
+        this.sent.push(msg);
+        mobile.receiveMsg(msg);
+      }
+    }
+
+    readInbox() {
+      if (this.isOn) {
+        let msg = '';
+        for (let i = 0; i < this.inbox.length; i++) {
+          msg += (i + 1) + ". " + this.inbox[i] + "<br>";
+        }
+        return msg;
+      }
+    }
+
+    readSent() {
+      if (this.isOn) {
+        let msg = '';
+        for (let i = 0; i < this.sent.length; i++) {
+          msg += (i + 1) + ". " + this.sent[i] + "<br>";
+        }
+        return msg;
+      }
+    }
+  }
+
+  let nokia = new Mobile();
+  let iphone = new Mobile();
+
+  // Bật cả 2 điện thoại
+  nokia.turnOn();
+  iphone.turnOn();
+
+  // Nokia  soạn tin nhắn và gửi đi
+  nokia.saveDraft('Hello from Nokia!');
+  nokia.sendMsg(nokia.draft, iphone);
+
+  // iPhone kiểm tra tin nhắn và hiển thị
+  document.write("Tin nhắn nhận được trên IPhone: <br>" + iphone.readInbox());
+</script>
+</body>
+</html>
