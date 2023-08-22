@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+
+<img src="https://www.w3schools.com/js/pic_bulboff.gif" alt="The bulb" id="myImage" onclick="changeImage()" />
+<button type="button" onclick="changeImage()">Công tắc</button>
+
+<script>
+
+    class ElectricLamp {
+        constructor(status) {
+            this.status = status;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        turnOn() {
+            this.status = true;
+            console.log("Bóng đèn đã bật.");
+        }
+
+        turnOff() {
+            this.status = false;
+            console.log("Bóng đèn đã tắt.");
+        }
+    }
+    class SwitchButton {
+        constructor(lamp, status) {
+            this.lamp = lamp;
+            this.status = status;
+        }
+
+        getLamp() {
+            return this.lamp;
+        }
+
+        setLamp(lamp) {
+            this.lamp = lamp;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        connectToLamp(lamp) {
+            this.lamp = lamp;
+        }
+
+        switchOn() {
+            if (!this.status) {
+                this.status = true;
+                this.lamp.turnOn();
+            }
+        }
+
+        switchOff() {
+            if (this.status) {
+                this.status = false;
+                this.lamp.turnOff();
+            }
+        }
+    }
+    let lamp = new ElectricLamp(false);
+    let button = new SwitchButton(lamp, false);
+
+    for (let i = 1; i <= 10; i++) {
+        console.log("Lần " + i);
+        button.switchOn();
+        button.switchOff();
+        console.log();
+    }
+    function changeImage() {
+        let image = document.getElementById("myImage");
+
+        if (image.src.match("bullon")) {
+            image.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+        } else {
+            image.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+        }
+    }
+</script>
+</body>
+</html>
