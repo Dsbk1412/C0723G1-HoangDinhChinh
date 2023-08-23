@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    let luong = +prompt("Nhập lương của viên:");
+    let thue, luongRong;
+    if (luong >= 15000000) {
+        thue = luong * 0.2;
+    } else if (luong >= 7000000 && luong < 15000000) {
+        thue = luong * 0.1;
+    } else {
+        thue = luong * 0.05;
+    }
+    luongRong = luong - thue;
+    alert(`Thuế thu nhập: ${thue}\nLương ròng: ${luongRong}`);
+</script>
+</body>
+</html>

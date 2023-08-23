@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    let h = 5;
+    for(let i = 0; i < h; i++) {
+        let row = '';
+        // Kiểm tra nếu đó là dòng đầu tiên hoặc dòng cuối cùng hoặc cột đầu tiên hoặc cột cuối cùng thì in dấu *
+        if(i === 0 || i === h - 1 || i === h - 1) {
+            for(let j = 0; j <= i; j++) {
+                row += '* ';
+            }
+        } else {
+            row += '*';
+            for(let j = 1; j < i; j++) {
+                row += '  ';
+            }
+            row += ' *';
+        }
+        console.log(row);
+    }
+</script>
+</body>
+</html>

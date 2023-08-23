@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    let arrA = [7,2,5,3,5,3];
+    let arrB =[7,2,5,4,6,3,5,3];
+    let result = [];
+    let count = {};
+    for (let i = 0; i < arrA.length; i++) {
+        if (count[arrA[i]] === undefined) {
+            count[arrA[i]] = 1;
+        } else {
+            count[arrA[i]]++;
+        }
+    }
+    for (let i = 0; i < arrB.length; i++) {
+        if (count[arrB[i]] === undefined) {
+            result.push(arrB[i]);
+            count[arrB[i]] = 1;
+        }
+    }
+    // In kết quả ra màn hình
+    let output = document.createElement("p");
+    output.innerHTML = "Mảng sau khi xử lý: " + result;
+    document.body.appendChild(output);
+</script>
+</body>
+</html>

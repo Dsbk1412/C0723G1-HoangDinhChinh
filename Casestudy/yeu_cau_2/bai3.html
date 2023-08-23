@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    let h = parseInt(prompt("Nhập chiều cao tam giác:"));
+
+    // Vẽ tam giác cân rỗng sử dụng vòng lặp for
+    for (let i = 1; i <= h; i++) {
+        let row = '';
+        for (let j = 1; j <= h - i; j++) {
+            row += '  ';
+        }
+        for (let k = 1; k <= 2 * i - 1; k++) {
+            if (k === 1 || k === 2 * i - 1 || i === h) {
+                row += '* ';
+            } else {
+                row += '  ';
+            }
+        }
+        console.log(row);
+    }
+</script>
+</body>
+</html>
