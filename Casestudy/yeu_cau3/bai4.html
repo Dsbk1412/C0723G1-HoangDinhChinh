@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    let menu = {
+        drinks: [
+            { name: 'Cafe', price: 30000, },
+            { name: 'Cam vắt', price: 25000 },
+            { name: 'Nước ép cà rốt', price: 35000 },
+            { name: 'Nước ép cà chua', price: 40000 },
+            { name: 'Nước lọc', price: 10000 },
+            { name: 'Nước dừa', price: 20000 },
+        ]
+    }
+    // Hiển thị danh sách các loại thức uống
+    document.write('Danh sách các loại thức uống:<br>');
+    menu.drinks.forEach((drink, index) => {
+        document.write(`${index + 1}. ${drink.name}<br>`);
+    });
+
+    // Khởi tạo biến tổng giá trị đơn hàng
+    let total = 0;
+
+    // Vòng lặp để lấy món
+    let choice;
+    do {
+        // Lấy lựa chọn của người dùng
+        choice = parseInt(prompt('Vui lòng nhập số tương ứng với thức uống bạn muốn đặt (hoặc nhập 7 để thoát):'));
+
+        // Kiểm tra lựa chọn của người dùng
+        if (choice >= 1 && choice <= 6) {
+            // Lấy thông tin thức uống được chọn
+            let drink = menu.drinks[choice - 1];
+
+            // Nhập số lượng
+            let quantity = parseInt(prompt(`Bạn đã chọn (${drink.name}), giá ${drink.price} đồng/món. Vui lòng nhập số lượng bạn muốn đặt:`));
+
+            // Cập nhật tổng giá trị đơn hàng
+            total += drink.price * quantity;
+
+            // Hiển thị thông tin đơn hàng cho người dùng
+            document.write(`Cảm ơn bạn đã đặt hàng (${drink.name}). Tổng giá trị đơn hàng của bạn hiện tại là ${total} đồng.<br>`);
+        } else if (choice !== 7) {
+            // Lựa chọn không hợp lệ
+            document.write('Lựa chọn của bạn không hợp lệ. Vui lòng chọn lại.<br>');
+        }
+    } while (choice !== 7);
+
+    // Hiển thị tổng giá trị đơn hàng khi người dùng thoát
+    document.write(`Tổng giá trị đơn hàng của bạn là ${total} đồng. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!<br>`);
+</script>
+</body>
+</html>

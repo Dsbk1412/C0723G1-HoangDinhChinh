@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<div id="result"></div>
+<script>
+    function differentSymbolsNaive(s) {
+        let set = new Set();
+        for (let i = 0; i < s.length; i++) {
+            set.add(s[i]);
+        }
+        return set;
+    }
+
+    let s = "cabca";
+    document.write(`Chuỗi ký tự ban đầu: ${s}<br>`);
+    let resultSet = differentSymbolsNaive(s);
+    let resultString = Array.from(resultSet).join(", ");
+    document.getElementById("result").innerHTML = `Có ${resultSet.size} ký tự khác nhau là: ${resultString}`;
+</script>
+</body>
+</html>

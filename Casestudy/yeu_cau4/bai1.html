@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    // Hàm chuẩn hóa xâu ký tự
+    function normalizeString(str) {
+        // Xóa khoảng trắng dư thừa
+        str = str.trim().replace(/\s+/g, ' ');
+
+        // Chuyển đổi các ký tự đầu của từ sang chữ hoa
+        let words = str.toLowerCase().split(' ');
+        for (let i = 0; i < words.length; i++) {
+            words[i] = words[i].charAt(0).toUpperCase() + words[i].substring(1);
+        }
+
+        // Kết hợp lại thành xâu mới
+        return words.join(' ');
+    }
+
+    // Hàm tìm từ dài nhất trong xâu
+    function findLongestWord(str) {
+        let words = str.split(/\W+/);
+        let longestWord = '';
+        for (let i = 0; i < words.length; i++) {
+            if (words[i].length > longestWord.length) {
+                longestWord = words[i];
+            }
+        }
+        for (let i = 0; i < words.length; i++) {
+            if (words[i].length === longestWord.length && words[i] !== longestWord) {
+                document.write(`Từ dài nhất trong xâu là: ${words[i]}<br>`);
+            }
+        }
+        return longestWord;
+    }
+
+    // Đoạn mã sử dụng các hàm trên để nhập xâu ký tự từ bàn phím, chuẩn hóa và tìm từ dài nhất
+    let inputString = prompt('Vui lòng nhập xâu ký tự:');
+    document.write(`Xâu trước khi chuẩn hóa: ${inputString}<br>`);
+    let normalizedString = normalizeString(inputString);
+    document.write(`Xâu sau khi chuẩn hóa: ${normalizedString}<br>`);
+    let longestWord = findLongestWord(normalizedString);
+    document.write(`Từ cùng độ dài nhưng khác từ dài nhất là: ${longestWord}<br>`);
+
+</script>
+</body>
+</html>
