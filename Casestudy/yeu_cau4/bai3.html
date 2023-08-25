@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    function commonCharacterCount(s1, s2) {
+        let commonChars = []; // Danh sách các kí tự chung
+        let s1Chars = new Set(s1); // Lấy tất cả các kí tự khác nhau trong s1
+        for (let char of s1Chars) {
+            let s1CharCount = s1.split(char).length - 1; // Tính số lần xuất hiện của char trong s1
+            let s2CharCount = s2.split(char).length - 1; // Tính số lần xuất hiện của char trong s2
+            let commonCharCount = Math.min(s1CharCount, s2CharCount); // Số lượng kí tự chung
+            if (commonCharCount > 0) commonChars.push(char.repeat(commonCharCount)); // Thêm các kí tự chung vào danh sách
+        }
+        let result = `Có ${commonChars.length} kí tự chung là ${commonChars.join(', ')}.`; // Tạo chuỗi kết quả
+        document.write(result); // Hiển thị chuỗi kết quả
+    }
+
+    // Test
+    let s1 = prompt("Nhap vao ky tu:");
+    let s2 = prompt("Nhap vao ky tu:");
+    commonCharacterCount(s1, s2); // "Có 3 kí tự chung là a, a, c." sẽ được hiển thị trên trình duyệt
+</script>
+</body>
+</html>

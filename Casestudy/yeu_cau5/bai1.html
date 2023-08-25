@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+  // function sumEvenNumbers(m, n) {
+  //   let matrix = []; // khởi tạo một ma trận rỗng
+  //   let sum = 0; // khởi tạo biến tổng
+  //   // sinh ra ma trận có kích thước m x n với các giá trị ngẫu nhiên từ 1 đến 100
+  //   for (let i = 0; i < m; i++) {
+  //     matrix[i] = [];
+  //     for (let j = 0; j < n; j++) {
+  //       matrix[i][j] = Math.floor(Math.random() * 100) + 1;
+  //       if (matrix[i][j] % 2 === 0) { // kiểm tra nếu giá trị là số chẵn
+  //         sum += matrix[i][j]; // thêm giá trị vào tổng
+  //       }
+  //     }
+  //   }
+  //   return sum; // trả về tổng các số chẵn trong ma trận
+  // }
+  function sumEvenNumbers(m, n) {
+      let matrix = [];
+      let sum = 0;
+      for (let i = 0; i < m; i++) {
+          matrix[i] = [];
+          for (let j = 0; j < n; j++) {
+              matrix[i][j] = Math.floor(Math.random() * 50) + 1;
+              if (matrix[i][j] % 2 === 0) {
+                  sum += matrix[i][j];
+              }
+          }
+      }
+
+      // hiển thị ma trận
+      document.write("<table>");
+      for (let i = 0; i < m; i++) {
+          document.write("<tr>");
+          for (let j = 0; j < n; j++) {
+              document.write("<td>" + matrix[i][j] + "</td>");
+          }
+          document.write("</tr>");
+      }
+      document.write("</table>");
+
+      return sum;
+  }
+
+  // Test
+  let m = Number(prompt("Nhập số hàng của ma trận:"));
+  let n = Number(prompt("Nhập số cột của ma trận:"));
+  let result = sumEvenNumbers(m, n);
+  document.write(`Tổng các số chẵn trong ma trận có kích thước ${m} x ${n} là ${result}.`);
+</script>
+</body>
+</html>

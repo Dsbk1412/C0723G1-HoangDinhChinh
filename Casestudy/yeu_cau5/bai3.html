@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<script>
+    function findMax(arr) {
+        let max = arr[0][0];
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] > max) {
+                    max = arr[i][j];
+                }
+            }
+        }
+        return max;
+    }
+
+    function findMin(arr) {
+        let min = arr[0][0];
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] < min) {
+                    min = arr[i][j];
+                }
+            }
+        }
+        return min;
+    }
+
+    // Example usage:
+    let arr2d = [
+        [1, 5, 3],
+        [10, 8, 6],
+        [2, 4, 0]
+    ];
+    // / Hiển thị mảng ban đầu
+    document.write("Mảng ban đầu: <br>");
+    for (let i = 0; i < arr2d.length; i++) {
+        for (let j = 0; j < arr2d[i].length; j++) {
+            document.write(arr2d[i][j] + " ");
+        }
+        document.write("<br>");
+    }
+
+    document.write("Giá trị lớn nhất: " + findMax(arr2d) + "<br>");
+    document.write("Giá trị nhỏ nhất: " + findMin(arr2d));
+</script>
+</body>
+</html>
