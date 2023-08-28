@@ -1,0 +1,155 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS</title>
+</head>
+<body>
+<h1>Hệ Thống Quản Lý Học Viên</h1>
+<label for="idInput"></label><input type="text" id="idInput" placeholder="Nhập mã số sinh viên">
+<label for="nameInput"></label><input type="text" id="nameInput" placeholder="Nhập tên học viên">
+<label for="classInput"></label><input type="text" id="classInput" placeholder="Nhập lớp học viên">
+<label for="emailInput"></label><input type="text" id="emailInput" placeholder="Nhập email học viên">
+<label for="dateInput"></label><input type="text" id="dateInput" placeholder="Nhập ngày sinh học viên">
+<button onclick="addNewManager()">Thêm mới</button>
+<div id="root"></div>
+<script>
+    class Manager{
+        constructor(id, name, className, email, birthDay) {
+            this.id = id;
+            this.name = name;
+            this.className = className;
+            this.email = email;
+            this.birthDay = birthDay;
+        }
+        getId(){
+            return this.id;
+        }
+        getname(){
+            return this.name;
+        }
+        getclassName(){
+            return this.className;
+        }
+        getemail(){
+            return this.email;
+        }
+        getbirthDay(){
+            return this.birthDay;
+        }
+        setId(id){
+            this.id = id;
+        }
+        setname(name){
+            this.name = name;
+        }
+        setclassName(className){
+            this.className = className;
+        }
+        setemail(email){
+            this.email = email;
+        }
+        setbirthDay(birthDay){
+            this.birthDay = birthDay;
+        }
+    }
+    let managerArr = [];
+    let student = new Manager("HV-1111","Hoang Khanh", "DE160397","khanhnam@gmail.com","14/02/2002");
+    let student1 = new Manager("HV-2222","Hoang Khanh Nam", "DE160398","khanhnam.h99@gmail.com","13/02/2002");
+    let student2 = new Manager("HV-3333","Kieu Anh", "DE160399","khanhnam.99@gmail.com","13/02/2002");
+    managerArr.push(student);
+    managerArr.push(student1);
+    managerArr.push(student2);
+    function displayManager() {
+        // language=HTML
+        let table = `
+            <table border="1" style="border-collapse: collapse" >
+                <thead>
+                <th>MSV</th>
+                <th>Họ và tên</th>
+                <th>Lớp</th>
+                <th>Email</th>
+                <th>Ngày sinh</th>
+                <th>Xóa</th>
+                <th>Sửa</th>
+                </thead>
+                <tbody>`;
+        for (let i = 0; i < managerArr.length; i++) {
+            let manager = managerArr[i];
+            table += `<tr>
+            <td class="id">${manager.getId()}</td>
+            <td>${manager.getname()}</td>
+            <td>${manager.getclassName()}</td>
+            <td>${manager.getemail()}</td>
+            <td>${manager.getbirthDay()}</td>
+            <th>
+                <button onclick="deleteManager('${manager.getId()}')">Xóa</button>
+            </th>
+            <th>
+              <button onclick="editManager('${manager.getId()}')">Sửa</button>
+            </th>
+          </tr>`;
+        }
+        table += `</tbody>
+                  </table>`;
+        document.getElementById("root").innerHTML = table;
+    }
+    function deleteManager(id) {
+        let index = -1;
+        for (let i = 0; i < managerArr.length; i++) {
+            const manager = managerArr[i];
+            if (manager.getId() === id) {
+                index = i;
+            }
+        }
+        const confirmDelete = confirm(
+            `Bạn có muốn xóa học sinh ${managerArr[index].getId()} không?`
+        );
+        if (confirmDelete) {
+            managerArr.splice(index, 1);
+            displayManager();
+        }
+    }
+    function editManager(id){
+        let index = -1;
+        for (let i = 0; i < managerArr.length; i++) {
+            if (managerArr[i].getId() === id) {
+                index = i;
+            }
+        }
+        const newName = prompt(`Nhập tên mới cho học sinh ${id}:`,managerArr[index].getname());
+        const newClassName = prompt(`Nhập lớp mới cho học sinh ${id}:`,managerArr[index].getclassName());
+        const newEmail = prompt(`Nhập email mới cho học sinh ${id}:`,managerArr[index].getemail());
+        const newBirthDay = prompt(`Nhập ngày sinh mới cho học sinh ${id}:`,managerArr[index].getbirthDay());
+        managerArr[index].setname(newName);
+        managerArr[index].setclassName(newClassName);
+        managerArr[index].setemail(newEmail);
+        managerArr[index].setbirthDay(newBirthDay);
+        displayManager();
+    }
+    function addNewManager() {
+        const id = document.getElementById("idInput").value;
+        const name = document.getElementById("nameInput").value;
+        const className = document.getElementById("classInput").value;
+        const email = document.getElementById("emailInput").value;
+        const birthDay = document.getElementById("dateInput").value;
+        // Kiểm tra nếu người dùng chưa nhập vào giá trị trong các ô input
+        if (id === "" || name === "" || className === "" || email === "" || birthDay === "") {
+            alert("Vui lòng nhập đầy đủ thông tin");
+            return;
+        }
+
+        // Thêm đối tượng Manager mới
+        let newManager = new Manager(id, name, className, email, birthDay);
+        managerArr.push(newManager);
+        displayManager();
+        // Reset giá trị của các input
+        document.getElementById("idInput").value = "";
+        document.getElementById("nameInput").value = "";
+        document.getElementById("classInput").value = "";
+        document.getElementById("emailInput").value = "";
+        document.getElementById("dateInput").value = "";
+    }
+    displayManager();
+</script>
+</body>
+</html>

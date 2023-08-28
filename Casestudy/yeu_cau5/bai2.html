@@ -5,6 +5,46 @@
     <title>SOS</title>
 </head>
 <body>
+<script>
+    function isPrime(num) {
+        if (num < 2) {
+            return false;
+        }
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 
+    // Đếm số lượng các số nguyên tố trong mảng 2 chiều
+    function countPrimesInArray(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                let num = arr[i][j];
+                if (isPrime(num)) {
+                    count++;
+                    console.log(num);
+                }
+            }
+        }
+        return count;
+    }
+
+    // Nhập mảng 2 chiều từ người dùng
+    const rows = +prompt("Nhập số hàng của mảng:");
+    const cols = +prompt("Nhập số cột của mảng:");
+    const arr = [];
+    for (let i = 0; i < rows; i++) {
+        arr[i] = [];
+        for (let j = 0; j < cols; j++) {
+            arr[i][j] = +prompt(`Nhập giá trị tại vị trí [${i}][${j}]:`);
+        }
+    }
+
+   document.write("Có " + countPrimesInArray(arr) + " số nguyên tố trong mảng.");
+</script>
 </body>
 </html>
